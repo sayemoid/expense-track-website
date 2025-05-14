@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CISSP Secure Test Prep 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #4f46e5;
+      --accent: indigo;
+      --background: #D4ECFD;
+      --text: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", serif;
+    }
+
+    h1, h2, h3 {
+      font-family: "Afacad Flux", serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      background: var(--background);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 150vw;
+      height: 150vw;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+      animation: pulse 8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+      }
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 2rem;
+      /*filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));*/
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      /*background: rgba(15, 23, 42, 0.8);*/
+      max-width: 70%;
+      margin: auto;
+    }
+
+    .feature-card {
+      background: rgba(191, 217, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .screenshot-container {
+      max-width: 70%;
+      margin: auto;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+
+    .screenshot-card {
+      border-radius: 2rem;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .screenshot-card:hover {
+      transform: scale(1.03);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: #e3e3e3;
+    }
+
+    .button {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+    }
+
+    .store-badges {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .store-badges img {
+      height: 50px;
+      transition: transform 0.3s;
+    }
+
+    .store-badges img:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-section {
+      padding: 4rem 2rem;
+      background: rgba(213, 213, 213, 0.8);
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info a {
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      padding: 1rem;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .store-badges {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<section class="hero">
+  <img src="img/logo.png" alt="Logo" class="logo">
+  <h1 class="gradient-text" style="font-size: 3.5rem; margin-bottom: 1.5rem;">
+    Let’s get your finances organized
+  </h1>
+  <p style="font-size: 1.25rem; margin-bottom: 1rem; opacity: 0.5;">
+    It takes just 1 tap.
+  </p>
+  <p style="font-size: 2rem; margin-bottom: 3rem; opacity: 0.9;">
+    Tap on a category, add amount, Done..
+  </p>
+  <div class="store-badges">
+    <a href="https://apps.apple.com/us/app/expense-track-budget-spend/id6744997720" target="_blank">
+      <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
+           alt="Download on the App Store">
+    </a>
+<!--    <a href="https://play.google.com/store/apps/details?id=dev.sayem.ckaprep" target="_blank">-->
+<!--      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"-->
+<!--           alt="Get it on Google Play">-->
+<!--    </a>-->
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <i class="fas fa-wallet fa-2x" style="color: var(--accent); margin-bottom: 1rem;"></i>
+    <h3 style="margin-bottom: 1rem;">Multi-Account Management</h3>
+    <p style="opacity: 0.8;">Create Cash, Bank, E-Wallet, Credit & Loan wallets to suit your needs.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-regular fa-chart-pie fa-2x" style="color: var(--accent); margin-bottom: 1rem;"></i>
+    <h3 style="margin-bottom: 1rem;">Categorized Insights</h3>
+    <p style="opacity: 0.8;">Visualize your spending breakdown with interactive pie-charts.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fas fa-chart-line fa-2x" style="color: var(--accent); margin-bottom: 1rem;"></i>
+    <h3 style="margin-bottom: 1rem;">Trend Tracking</h3>
+    <p style="opacity: 0.8;">Monitor income vs. expenses over time with dynamic line graphs.</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fas fa-users fa-2x" style="color: var(--accent); margin-bottom: 1rem;"></i>
+    <h3 style="margin-bottom: 1rem;">Shared Accounts</h3>
+    <p style="opacity: 0.8;">Invite family to contribute and stay on the same page financially.</p>
+  </div>
+</section>
+
+
+<section class="screenshot-container">
+  <div class="screenshots">
+    <div class="screenshot-card">
+      <img src="img/1.png" alt="Interactive Quiz Interface">
+    </div>
+    <div class="screenshot-card">
+      <img src="img/2.png" alt="Analytics Dashboard">
+    </div>
+    <div class="screenshot-card">
+      <img src="img/3.png" alt="Dark Mode Example">
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Master Your Finances?</h2>
+  <p style="margin-bottom: 3rem; opacity: 0.9;">Join 10,000+ users taking control of their budget</p>
+  <div class="store-badges">
+    <a href="https://apps.apple.com/us/app/expense-track-budget-spend/id6744997720" target="_blank">
+      <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
+           alt="Download on the App Store">
+    </a>
+<!--    <a href="https://play.google.com/store/apps/details?id=dev.sayem.ckaprep" target="_blank">-->
+<!--      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"-->
+<!--           alt="Get it on Google Play">-->
+<!--    </a>-->
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <p style="opacity: 0.9;">Have questions? Reach out to us!</p>
+  <div class="contact-info">
+    <a href="mailto:mail@sayem.dev">
+      <i class="fas fa-envelope"></i>
+      mail@sayem.dev
+    </a>
+    <a href="https://twitter.com/sayemoid" target="_blank">
+      <i class="fab fa-twitter"></i>
+      @sayemoid
+    </a>
+    <a href="https://linkedin.com/in/sayemoid" target="_blank">
+      <i class="fab fa-linkedin"></i>
+      Sayem Hossain
+    </a>
+  </div>
+</section>
+<section class="contact-section">
+  <h2>About</h2>
+  <div class="contact-info">
+    <a href="https://sayem.dev/blog/articles/privacy-policy-for-expense-track-budget-spend" target="_blank">
+      <i class="fa-solid fa-shield"></i>
+      Privacy Policy
+    </a>
+    <a href="https://sayem.dev/blog/articles/terms-of-use-for-expense-track-budget-spend" target="_blank">
+      <i class="fa-solid fa-file-contract"></i>
+      Terms of Use
+    </a>
+  </div>
+</section>
+
+<script>
+  // Add smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Add intersection observer for animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, {threshold: 0.1});
+
+  document.querySelectorAll('.feature-card, .screenshot-card').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Dark mode toggle
+  const toggle = document.querySelector('.dark-mode-toggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    toggle.querySelector('i').classList.toggle('fa-moon');
+    toggle.querySelector('i').classList.toggle('fa-sun');
+  });
+</script>
+</body>
+</html>
